@@ -1,5 +1,6 @@
 const buildPlugins = require('./buildPlugins.js');
 const buildDevServer = require('./buildDevServer.js');
+const buildLoaders = require('./buildLoaders.js');
 
 module.exports = function buildWebpackConfig(options) {
 	const { paths, mode, isDev } = options;
@@ -16,5 +17,8 @@ module.exports = function buildWebpackConfig(options) {
 		plugins: buildPlugins(options),
 		devServer: buildDevServer(options),
 		devtool: isDev ? 'inline-source-map' : false,
+		module: {
+			rules: buildLoaders(),
+		},
 	};
 };

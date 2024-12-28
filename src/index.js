@@ -3,6 +3,7 @@ import { handleOperator } from './handlers/handleOperator';
 import { handleClear } from './handlers/handleClear';
 import { handleToggleSign } from './handlers/handleToggleSign';
 import { handleNumber } from './handlers/handleNumber';
+import './styles/global.scss';
 
 const calculatorActions = document.getElementById('calculator_actions');
 

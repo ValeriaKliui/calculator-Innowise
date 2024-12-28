@@ -1,3 +1,4 @@
+
 import { calculateSum, extractNumbers } from '../utils/utils';
 
 export const handleEquality = (inputElement) => {
