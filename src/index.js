@@ -1,6 +1,6 @@
 import './styles/global.scss';
 import './styles/calculator.scss';
-import './styles/theme-toggler.scss'
+import './styles/theme-toggler.scss';
 
 import { handleClear } from './handlers/handleClear';
 import { handleDigit } from './handlers/handleDigit';
@@ -52,12 +52,11 @@ const calculate = function (event) {
 calculatorActions.addEventListener('click', calculate);
 valueInput.addEventListener('input', handleInput);
 
-
 var input = document.getElementById('toggleswitch');
 var outputtext = document.getElementById('status');
 
-input.addEventListener('change',function(){
-	if(this.checked) {
+input.addEventListener('change', function () {
+	if (this.checked) {
 		document.documentElement.setAttribute('data-theme', 'dark');
 	} else {
 		document.documentElement.setAttribute('data-theme', 'light');

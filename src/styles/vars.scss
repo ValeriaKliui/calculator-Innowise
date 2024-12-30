@@ -1,0 +1,22 @@
+:root {
+	--highlight: #ff9f0aff;
+	--highlight-hover: #ffc11a;
+	--lowlight: #535353;
+	--lowlight-hover: #616161;
+	--text: #ffffff;
+	--button: #7d7d7dff;
+	--button-hover: #949191;
+	--calculator: #454545;
+}
+
+[data-theme='dark'] {
+	--background-color: #121212;
+	--highlight: #710aff;
+	--highlight-hover: #ffc11a;
+	--lowlight: #4500a5;
+	--lowlight-hover: #616161;
+	--text: #001c99;
+	--button: #5d5f71;
+	--button-hover: #949191;
+	--calculator: #b9ceed;
+}

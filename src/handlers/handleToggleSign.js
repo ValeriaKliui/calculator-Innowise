@@ -1,5 +1,3 @@
-import { extractNumbers, toggleLastSign } from '../utils/utils';
-
 export const handleToggleSign = (inputElement) => {
 	const regexOnlySum = /^[0-9+\-.]*$/;
 

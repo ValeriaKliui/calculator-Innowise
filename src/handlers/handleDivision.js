@@ -1,4 +1,5 @@
-import { calculateDivision, extractNumbers } from '../utils/utils';
+import { calculateDivision } from '../utils/math';
+import { extractNumbers } from '../utils/string';
 
 export const handleDivision = (inputElement) => {
 	const allNumbers = extractNumbers(inputElement.value);

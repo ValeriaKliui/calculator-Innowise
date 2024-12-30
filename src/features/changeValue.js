@@ -2,7 +2,7 @@ import { extractNumbers } from '../utils/string';
 
 let lastValidValue = '';
 
-export const handleInput = (event) => {
+export const changeValue = (event) => {
 	const regexAllowedSymbols = /^[0-9×+\-.%÷]*$/;
 	const value = event.target.value;
 
