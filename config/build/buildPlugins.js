@@ -1,11 +1,11 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = function buildPlugins({ paths }) {
-  const { html } = paths;
+	const { html } = paths;
 
-  return [
-    new HtmlWebpackPlugin({
-      template: html,
-    }),
-  ];
+	return [
+		new HtmlWebpackPlugin({
+			template: html,
+		}),
+	];
 };

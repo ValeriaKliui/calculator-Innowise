@@ -1,8 +1,16 @@
 import { extractNumbers, toggleLastSign } from '../utils/utils';
 
 export const handleToggleSign = (inputElement) => {
-	const allNumbers = extractNumbers(inputElement.value);
-	const toggledSignStr = toggleLastSign(allNumbers);
+	const regexOnlySum = /^[0-9+\-.]*$/;
 
-	inputElement.value = toggledSignStr;
+	if (!regexOnlySum.test(inputElement.value)) {
+		inputElement.value = inputElement.value.startsWith('-')
+			? inputElement.value.slice(1)
+			: `-${inputElement.value}`;
+	} else {
+		const allNumbers = extractNumbers(inputElement.value);
+		const toggledSignStr = toggleLastSign(allNumbers);
+
+		inputElement.value = toggledSignStr;
+	}
 };

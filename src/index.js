@@ -1,11 +1,16 @@
-import { handleEquality } from './handlers/handleEquality';
-import { handleOperator } from './handlers/handleOperator';
-import { handleClear } from './handlers/handleClear';
-import { handleToggleSign } from './handlers/handleToggleSign';
-import { handleNumber } from './handlers/handleNumber';
 import './styles/global.scss';
+import './styles/calculator.scss';
+import './styles/theme-toggler.scss'
 
-const calculatorActions = document.getElementById('calculator_actions');
+import { handleClear } from './handlers/handleClear';
+import { handleDigit } from './handlers/handleDigit';
+import { handleEquality } from './handlers/handleEquality';
+import { handleNumber } from './handlers/handleNumber';
+import { handleOperator } from './handlers/handleOperator';
+import { handleToggleSign } from './handlers/handleToggleSign';
+import { handleInput } from './handlers/handleInput';
+
+const calculatorActions = document.getElementById('calculator_buttons');
 
 const valueInput = document.getElementById('value');
 
@@ -19,11 +24,23 @@ const calculate = function (event) {
 		AC: () => handleClear(valueInput),
 		'+/-': () => handleToggleSign(valueInput),
 		'%': () => handleOperator(valueInput, '%'),
-		'÷': () => handleOperator(valueInput, '÷'),
-		'.': () => handleOperator(valueInput, '.'),
-		'+': () => handleOperator(valueInput, '+'),
-		'-': () => handleOperator(valueInput, '-'),
-		'×': () => handleOperator(valueInput, '×'),
+		'÷': () => {
+			handleEquality(valueInput);
+			handleOperator(valueInput, '÷');
+		},
+		'.': () => handleDigit(valueInput),
+		'+': () => {
+			handleEquality(valueInput);
+			handleOperator(valueInput, '+');
+		},
+		'-': () => {
+			handleEquality(valueInput);
+			handleOperator(valueInput, '-');
+		},
+		'×': () => {
+			handleEquality(valueInput);
+			handleOperator(valueInput, '×');
+		},
 		'=': () => handleEquality(valueInput),
 	};
 
@@ -32,15 +49,17 @@ const calculate = function (event) {
 	} else handleNumber(valueInput, value);
 };
 
-let lastValidValue = '';
-
-const handleChange = (event) => {
-	const regexAllowedSymbols = /^[0-9×+\-.%÷]*$/;
-	const value = event.target.value;
-
-	if (!regexAllowedSymbols.test(value)) event.target.value = lastValidValue;
-	else lastValidValue = value;
-};
-
 calculatorActions.addEventListener('click', calculate);
-valueInput.addEventListener('input', handleChange);
+valueInput.addEventListener('input', handleInput);
+
+
+var input = document.getElementById('toggleswitch');
+var outputtext = document.getElementById('status');
+
+input.addEventListener('change',function(){
+	if(this.checked) {
+		document.documentElement.setAttribute('data-theme', 'dark');
+	} else {
+		document.documentElement.setAttribute('data-theme', 'light');
+	}
+});
