@@ -5,13 +5,21 @@ import globals from 'globals';
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
-	{ files: ['**/*.js'], languageOptions: { sourceType: 'module' } },
+	{
+		files: ['**/*.js'],
+		languageOptions: {
+			sourceType: 'module',
+		},
+	},
 	{
 		ignores: ['dist', 'node_modules'],
 	},
 	{
 		languageOptions: {
-			globals: { ...globals.browser, ...globals.node },
+			globals: {
+				...globals.browser,
+				...globals.node,
+			},
 		},
 	},
 	pluginJs.configs.recommended,

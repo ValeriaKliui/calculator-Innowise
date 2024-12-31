@@ -15,7 +15,7 @@ function performOperatorAction(operator) {
 const operatorActions = {
 	AC: () => handleClear(valueInput),
 	'+/-': () => handleToggleSign(valueInput),
-	'%': () => handleOperator(valueInput, '%'),
+	'%': () => performOperatorAction('%'),
 	'÷': () => performOperatorAction('÷'),
 	'.': () => handleDigit(valueInput),
 	'+': () => performOperatorAction('+'),

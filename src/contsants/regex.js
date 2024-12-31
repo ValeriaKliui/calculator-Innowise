@@ -1,1 +1,0 @@
-export const ALL_CALCULATOR_SYMBOLS = /^[0-9×+\-.%÷]*$/;

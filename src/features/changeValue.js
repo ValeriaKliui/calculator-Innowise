@@ -1,15 +1,12 @@
-import { extractNumbers } from '../utils/string';
+import { ALL_CALCULATOR_SYMBOLS } from '../constants/regex';
 
 let lastValidValue = '';
 
 export const changeValue = (event) => {
-	const regexAllowedSymbols = /^[0-9×+\-.%÷]*$/;
-	const value = event.target.value;
+	const { value } = event.target;
 
-	const freezeInputValue =
-		!regexAllowedSymbols.test(value) ||
-		extractNumbers(event.target.value).filter((number) => number.startsWith('.')).length !== 0;
+	const isValid = ALL_CALCULATOR_SYMBOLS.test(value);
 
-	if (freezeInputValue) event.target.value = lastValidValue;
-	else lastValidValue = value;
+	if (isValid) lastValidValue = value;
+	else event.target.value = lastValidValue;
 };

@@ -1,1 +1,2 @@
-export const handleNumber = (inputElement, value) => (inputElement.value += value);
+export const handleNumber = (inputElement, value) =>
+	(inputElement.value += value);

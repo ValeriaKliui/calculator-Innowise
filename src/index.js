@@ -2,63 +2,20 @@ import './styles/global.scss';
 import './styles/calculator.scss';
 import './styles/theme-toggler.scss';
 
-import { handleClear } from './handlers/handleClear';
-import { handleDigit } from './handlers/handleDigit';
-import { handleEquality } from './handlers/handleEquality';
-import { handleNumber } from './handlers/handleNumber';
-import { handleOperator } from './handlers/handleOperator';
-import { handleToggleSign } from './handlers/handleToggleSign';
-import { handleInput } from './handlers/handleInput';
+import { calculateValue } from './features/calculateValue';
+import { changeValue } from './features/changeValue';
+import { setInitTheme } from './features/setInitTheme';
+import { toggleTheme } from './features/toggleTheme';
 
 const calculatorActions = document.getElementById('calculator_buttons');
+calculatorActions.addEventListener('click', calculateValue);
 
 const valueInput = document.getElementById('value');
+valueInput.addEventListener('input', changeValue);
 
-const calculate = function (event) {
-	let target = event.target;
-	const value = target.getAttribute('data-value');
+document.addEventListener('DOMContentLoaded', setInitTheme);
 
-	if (!value) return;
+const themeToggler = document.getElementById('theme-toggler');
+themeToggler.addEventListener('change', toggleTheme);
 
-	const operatorActions = {
-		AC: () => handleClear(valueInput),
-		'+/-': () => handleToggleSign(valueInput),
-		'%': () => handleOperator(valueInput, '%'),
-		'÷': () => {
-			handleEquality(valueInput);
-			handleOperator(valueInput, '÷');
-		},
-		'.': () => handleDigit(valueInput),
-		'+': () => {
-			handleEquality(valueInput);
-			handleOperator(valueInput, '+');
-		},
-		'-': () => {
-			handleEquality(valueInput);
-			handleOperator(valueInput, '-');
-		},
-		'×': () => {
-			handleEquality(valueInput);
-			handleOperator(valueInput, '×');
-		},
-		'=': () => handleEquality(valueInput),
-	};
-
-	if (operatorActions[value]) {
-		operatorActions[value]();
-	} else handleNumber(valueInput, value);
-};
-
-calculatorActions.addEventListener('click', calculate);
-valueInput.addEventListener('input', handleInput);
-
-var input = document.getElementById('toggleswitch');
-var outputtext = document.getElementById('status');
-
-input.addEventListener('change', function () {
-	if (this.checked) {
-		document.documentElement.setAttribute('data-theme', 'dark');
-	} else {
-		document.documentElement.setAttribute('data-theme', 'light');
-	}
-});
+// document.addEventListener('keydown', handleKeyEvent);

@@ -4,7 +4,13 @@
 	align-items: center;
 	height: 100vh;
 }
-
+.container__app {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	width: 100%;
+	max-width: 400px;
+}
 .calculator {
 	background-color: var(--calculator);
 	border-radius: 10px;
@@ -12,7 +18,8 @@
 	flex-direction: column;
 	border-radius: 10px;
 	overflow: hidden;
-	flex-basis: 350px;
+	width: 100%;
+	box-sizing: border-box;
 }
 
 .calculator__buttons {
@@ -24,9 +31,9 @@
 .button {
 	background-color: var(--button);
 	color: white;
-	font-size: 1.5rem;
+	font-size: 35px;
 	border: none;
-	padding: 25px;
+	padding: 20px;
 	text-align: center;
 
 	&:hover {
@@ -38,7 +45,7 @@
 	transform: scale(0.95);
 }
 
-.operator_highlight {
+.button_highlight {
 	background-color: var(--highlight);
 
 	&:hover {
@@ -46,7 +53,7 @@
 	}
 }
 
-.operator_lowlight {
+.button_lowlight {
 	background-color: var(--lowlight);
 
 	&:hover {
@@ -61,6 +68,11 @@
 .value-input {
 	background: var(--calculator);
 	padding: 20px;
+	border: none;
+
+	&:focus-visible {
+		outline: 1px var(--highlight) auto;
+	}
 }
 
 .value-input,
