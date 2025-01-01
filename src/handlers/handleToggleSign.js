@@ -1,8 +1,8 @@
 import { REGEX_NUMERIC_WITH_SIGN_AND_DECIMAL } from '../constants/regex';
 import {
 	extractNumbers,
-	toggleSignOfOperation,
 	toggleLastSign,
+	toggleSignOfOperation,
 } from '../utils/string';
 
 export const handleToggleSign = (inputElement) => {

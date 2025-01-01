@@ -2,14 +2,14 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 100vh;
+	height: 100%;
 }
 .container__app {
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
-	width: 100%;
-	max-width: 430px;
+	height: 100%;
+	justify-content: center;
 }
 .calculator {
 	background-color: var(--calculator);
@@ -17,8 +17,8 @@
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
-	width: 100%;
 	box-sizing: border-box;
+	max-width: 300px;
 }
 
 .calculator__buttons {
@@ -30,9 +30,9 @@
 .button {
 	background-color: var(--button);
 	color: var(--button-text);
-	font-size: 35px;
+	font-size: 25px;
 	border: none;
-	padding: 20px;
+	padding: 15px;
 	text-align: center;
 
 	&:hover {
@@ -67,7 +67,7 @@
 	background: var(--calculator);
 	padding: 20px;
 	border: none;
-	font-size: 40px;
+	font-size: 35px;
 	text-align: right;
 	color: var(--text);
 

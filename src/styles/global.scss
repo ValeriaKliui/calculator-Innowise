@@ -5,13 +5,13 @@ body {
 	color: var(--color);
 	font-family: 'Roboto', serif;
 	font-size: 22px;
+	height: 100vh;
 	transition:
 		background-color 0.3s,
 		color 0.3s;
 }
 
 button {
-	font-size: 22px;
 	cursor: pointer;
 	font-family: inherit;
 }

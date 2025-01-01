@@ -1,3 +1,7 @@
+import {
+	CALCULATOR_OPERATORS,
+	ROUNDING_DIGIT,
+} from '../../constants/calculator';
 import { REGEX_NUMBERS_WITH_OPERATORS } from '../../constants/regex';
 import { extractNumbers, replacePercentages } from '../string';
 
@@ -34,14 +38,21 @@ export const processOperation = (valueString, operationFunc) => {
 };
 
 export const calculatePercent = (valueString) => {
+	const { multiply, division } = CALCULATOR_OPERATORS;
 	const [firstNumber, ...remainingNumbers] = extractNumbers(valueString);
 
 	if (remainingNumbers.length === 0) return getPercentOf(firstNumber);
 
-	if (valueString.includes('×'))
+	if (valueString.includes(multiply))
 		return processOperation(valueString, calculateMultiply);
-	if (valueString.includes('÷'))
+	if (valueString.includes(division))
 		return processOperation(valueString, calculateDivision);
 
 	return calculatePercentAdditionOrSubtraction(valueString);
+};
+
+export const roundNumber = (number, digit = ROUNDING_DIGIT) => {
+	const roundedNumber = number.toFixed(digit);
+
+	return parseFloat(roundedNumber);
 };

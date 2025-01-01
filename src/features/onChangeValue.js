@@ -1,5 +1,5 @@
 import { REGEX_VALID_CALCULATOR_SYMBOLS } from '../constants/regex';
-import { replaceWithValidSymbols } from '../utils/string';
+import { replaceDivisionAndMultiplicationSymbols } from '../utils/string';
 import { getOperatorActions } from './createOperatorActions';
 
 let lastValidValue = '';
@@ -7,7 +7,8 @@ let lastValidValue = '';
 export const onChangeValue = (event) => {
 	const { value } = event.target;
 
-	const replacedWithValidSymbols = replaceWithValidSymbols(value);
+	const replacedWithValidSymbols =
+		replaceDivisionAndMultiplicationSymbols(value);
 
 	if (REGEX_VALID_CALCULATOR_SYMBOLS.test(replacedWithValidSymbols)) {
 		lastValidValue = replacedWithValidSymbols;

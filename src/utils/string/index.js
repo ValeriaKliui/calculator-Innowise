@@ -1,3 +1,4 @@
+import { CALCULATOR_OPERATORS } from '../../constants/calculator';
 import {
 	REGEX_MULTIPLICATION_DIVISION_PERCENTS,
 	REGEX_SIGNED_NUMBER,
@@ -12,7 +13,7 @@ export const extractNumbers = (string = '') => {
 export const trimOperator = (string = '') => string.slice(0, -1);
 
 export const replacePercentage = (expression) => {
-	if (expression.includes('%')) {
+	if (expression.includes(CALCULATOR_OPERATORS.percent)) {
 		const number = Number(trimOperator(expression));
 		return getPercentOf(number);
 	}
@@ -35,7 +36,9 @@ export const appendOperator = (string, operator) => {
 };
 
 export const toggleSignOfOperation = (operation = '') =>
-	operation.startsWith('-') ? operation.slice(1) : `-${operation}`;
+	operation.startsWith(CALCULATOR_OPERATORS.decrement)
+		? operation.slice(1)
+		: `-${operation}`;
 
 export const toggleLastSign = (numbers) => {
 	if (!numbers.length) return '';
@@ -48,6 +51,8 @@ export const toggleLastSign = (numbers) => {
 		.join('');
 };
 
-export const replaceWithValidSymbols = (string) => {
-	return string.replace('*', '×').replace(/([/:])/g, '÷');
+export const replaceDivisionAndMultiplicationSymbols = (string) => {
+	const { multiply, division } = CALCULATOR_OPERATORS;
+
+	return string.replace('*', multiply).replace(/([/:])/g, division);
 };
