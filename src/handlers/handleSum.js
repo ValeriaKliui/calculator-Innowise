@@ -1,8 +1,5 @@
 import { calculateSum } from '../utils/math';
-import { extractNumbers } from '../utils/string';
+import { handleOperation } from './handleOperation';
 
-export const handleSum = (inputElement) => {
-	const allNumbers = extractNumbers(inputElement.value);
-
-	inputElement.value = calculateSum(allNumbers);
-};
+export const handleSum = (inputElement) =>
+	handleOperation(inputElement, calculateSum);

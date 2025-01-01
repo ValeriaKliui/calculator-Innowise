@@ -1,14 +1,18 @@
+import { REGEX_NUMERIC_WITH_SIGN_AND_DECIMAL } from '../constants/regex';
+import {
+	extractNumbers,
+	toggleLastSign,
+	toggleSignOfOperation,
+} from '../utils/string';
+
 export const handleToggleSign = (inputElement) => {
-	const regexOnlySum = /^[0-9+\-.]*$/;
+	const { value } = inputElement;
 
-	if (!regexOnlySum.test(inputElement.value)) {
-		inputElement.value = inputElement.value.startsWith('-')
-			? inputElement.value.slice(1)
-			: `-${inputElement.value}`;
+	const isNumeric = REGEX_NUMERIC_WITH_SIGN_AND_DECIMAL.test(value);
+
+	if (isNumeric) {
+		inputElement.value = toggleLastSign(extractNumbers(value));
 	} else {
-		const allNumbers = extractNumbers(inputElement.value);
-		const toggledSignStr = toggleLastSign(allNumbers);
-
-		inputElement.value = toggledSignStr;
+		inputElement.value = toggleSignOfOperation(value);
 	}
 };

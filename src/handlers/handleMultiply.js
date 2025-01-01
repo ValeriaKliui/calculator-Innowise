@@ -1,8 +1,5 @@
 import { calculateMultiply } from '../utils/math';
-import { extractNumbers } from '../utils/string';
+import { handleOperation } from './handleOperation';
 
-export const handleMultiply = (inputElement) => {
-	const allNumbers = extractNumbers(inputElement.value);
-
-	inputElement.value = calculateMultiply(allNumbers);
-};
+export const handleMultiply = (inputElement) =>
+	handleOperation(inputElement, calculateMultiply);

@@ -9,14 +9,13 @@
 	flex-direction: column;
 	gap: 20px;
 	width: 100%;
-	max-width: 400px;
+	max-width: 430px;
 }
 .calculator {
 	background-color: var(--calculator);
 	border-radius: 10px;
 	display: flex;
 	flex-direction: column;
-	border-radius: 10px;
 	overflow: hidden;
 	width: 100%;
 	box-sizing: border-box;
@@ -30,7 +29,7 @@
 
 .button {
 	background-color: var(--button);
-	color: white;
+	color: var(--button-text);
 	font-size: 35px;
 	border: none;
 	padding: 20px;
@@ -39,10 +38,9 @@
 	&:hover {
 		background: var(--button-hover);
 	}
-}
-
-.button:active {
-	transform: scale(0.95);
+	&:active {
+		transform: scale(0.95);
+	}
 }
 
 .button_highlight {
@@ -69,15 +67,14 @@
 	background: var(--calculator);
 	padding: 20px;
 	border: none;
+	font-size: 40px;
+	text-align: right;
+	color: var(--text);
 
 	&:focus-visible {
 		outline: 1px var(--highlight) auto;
 	}
-}
-
-.value-input,
-.value-input::placeholder {
-	color: var(--text);
-	font-size: 40px;
-	text-align: right;
+	&::placeholder {
+		color: var(--text);
+	}
 }

@@ -17,5 +17,3 @@ document.addEventListener('DOMContentLoaded', setInitTheme);
 
 const themeToggler = document.getElementById('theme-toggler');
 themeToggler.addEventListener('change', toggleTheme);
-
-// document.addEventListener('keydown', handleKeyEvent);

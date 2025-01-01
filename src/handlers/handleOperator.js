@@ -1,6 +1,7 @@
-import { appendOperator } from '../utils/formatting';
+import { appendOperator } from '../utils/string';
 
 export const handleOperator = (inputElement, operator) => {
-	console.log('handleOperator', inputElement.value, operator);
-	inputElement.value = appendOperator(inputElement.value, operator);
+	const { value } = inputElement;
+
+	inputElement.value = appendOperator(value, operator);
 };

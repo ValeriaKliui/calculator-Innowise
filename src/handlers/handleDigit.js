@@ -1,10 +1,11 @@
-import { appendOperator } from '../utils/formatting';
+import { appendOperator } from '../utils/string';
 import { extractNumbers } from '../utils/string';
 
 export const handleDigit = (inputElement) => {
-	const numbers = extractNumbers(inputElement.value);
+	const { value } = inputElement;
+	const numbers = extractNumbers(value);
 	const lastNumber = numbers.at(-1);
+	const endsWithDot = String(lastNumber).includes('.');
 
-	if (!lastNumber.includes('.'))
-		inputElement.value = appendOperator(inputElement.value, '.');
+	if (!endsWithDot) inputElement.value = appendOperator(value, '.');
 };

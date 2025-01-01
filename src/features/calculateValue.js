@@ -14,14 +14,14 @@ function performOperatorAction(operator) {
 
 const operatorActions = {
 	AC: () => handleClear(valueInput),
-	'+/-': () => handleToggleSign(valueInput),
-	'%': () => performOperatorAction('%'),
-	'÷': () => performOperatorAction('÷'),
+	'=': () => handleEquality(valueInput),
 	'.': () => handleDigit(valueInput),
+	'+/-': () => handleToggleSign(valueInput),
+	'%': () => handleOperator(valueInput, '%'),
+	'÷': () => performOperatorAction('÷'),
 	'+': () => performOperatorAction('+'),
 	'-': () => performOperatorAction('-'),
 	'×': () => performOperatorAction('×'),
-	'=': () => handleEquality(valueInput),
 };
 
 export const calculateValue = (event) => {

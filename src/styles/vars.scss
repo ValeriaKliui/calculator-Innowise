@@ -3,10 +3,11 @@
 	--highlight-hover: #ffc11a;
 	--lowlight: #535353;
 	--lowlight-hover: #616161;
-	--text: #ffffff;
+	--button-text: #ffffff;
 	--button: #7d7d7dff;
 	--button-hover: #949191;
 	--calculator: #454545;
+	--text: #ffffff;
 }
 
 [data-theme='dark'] {
@@ -15,8 +16,8 @@
 	--highlight-hover: #ffc11a;
 	--lowlight: #4500a5;
 	--lowlight-hover: #616161;
-	--text: #001c99;
 	--button: #5d5f71;
 	--button-hover: #949191;
 	--calculator: #b9ceed;
+	--text: #001c99;
 }
