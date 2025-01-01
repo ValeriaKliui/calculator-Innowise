@@ -1,10 +1,11 @@
-const path = require('path');
+const { resolve } = require('path');
 
 const PATHS = {
-	entry: path.resolve('src', 'index.js'),
-	build: path.resolve('dist'),
-	html: path.resolve('public', 'index.html'),
-	src: path.resolve('src'),
+	entry: resolve('src', 'index.js'),
+	build: resolve('dist'),
+	html: resolve('public', 'index.html'),
+	src: resolve('src'),
+	favicon: resolve('public', 'favicon.ico'),
 };
 
 const MODE = 'development';
