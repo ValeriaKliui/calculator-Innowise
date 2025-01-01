@@ -1,4 +1,4 @@
-export const REGEX_VALID_CALCULATOR_SYMBOLS = /^[0-9×+\-.%÷]*$/;
+export const REGEX_VALID_CALCULATOR_SYMBOLS = /^[0-9×+\-.%÷=]*$/;
 
 export const REGEX_NUMERIC_WITH_SIGN_AND_DECIMAL = /^[0-9+\-.]*$/;
 

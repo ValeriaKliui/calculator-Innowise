@@ -47,3 +47,7 @@ export const toggleLastSign = (numbers) => {
 		.map((num, index) => (num < 0 || index === 0 ? num : `+${num}`))
 		.join('');
 };
+
+export const replaceWithValidSymbols = (string) => {
+	return string.replace('*', '×').replace(/([/:])/g, '÷');
+};

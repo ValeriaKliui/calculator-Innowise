@@ -18,7 +18,7 @@
 	width: 40px;
 	height: 40px;
 	background: var(--highlight);
-	border-radius: 50%; /* Make the button circular */
+	border-radius: 50%;
 	transition: transform 0.2s ease-in-out;
 }
 .theme-toggler__checkbox:checked + .theme-toggler__button {

@@ -2,14 +2,14 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding: 30px 0;
+	height: 100vh;
 }
 .container__app {
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
 	width: 100%;
-	max-width: 400px;
+	max-width: 430px;
 }
 .calculator {
 	background-color: var(--calculator);

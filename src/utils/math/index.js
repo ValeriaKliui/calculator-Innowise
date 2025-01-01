@@ -1,28 +1,5 @@
-// function round(num) {
-// 	const integerPart = num | 0; // Get the integer part (truncation)
-// 	const decimalPart = num - integerPart; // Get the fractional part
-
 import { REGEX_NUMBERS_WITH_OPERATORS } from '../../constants/regex';
 import { extractNumbers, replacePercentages } from '../string';
-
-// 	// If the decimal part is 0.5 or more, round up
-// 	return decimalPart >= 0.5 ? integerPart + 1 : integerPart;
-// }
-
-// export const calculateSum = (numbers) => {
-// 	const precision = numbers.reduce((maxDigit, currNumber) => {
-// 		let currDigit = String(currNumber).includes('.')
-// 			? String(currNumber).split('.')[1].length
-// 			: 0;
-
-// 		return currDigit > maxDigit ? currDigit : maxDigit;
-// 	}, 0);
-
-// 	let scale = 10 ** precision;
-// 	console.log(scale);
-
-// 	return round(numbers.reduce((acc, curr) => acc + curr, 0) * scale) / scale;
-// };
 
 export const calculateSum = (numbers) =>
 	numbers.reduce((acc, curr) => acc + curr, 0);

@@ -69,28 +69,28 @@ npm run deploy
 
 ```plaintext
 public/
-├── index.html        # The main HTML file that serves as the entry point to the app.
-└── favicon.ico       # The favicon that appears in the browser tab.
+├── index.html                         # The main HTML file that serves as the entry point to the app.
+└── favicon.ico                        # The favicon that appears in the browser tab.
 ```
 
 ### Structure of `src/`:
 
 ```plaintext
 src/
-├── constants/                # Reusable constants for the application.
-│   ├── calculator.js      # Calculator related constants.
-│   ├── regex.js            # Regular expressions used across the project.
-├── features/                 # JavaScript files for specific features and functionalities.
-│   ├── calculateValue.js   # Logic for calculating values.
-│   ├── changeValue.js   # Handles changes in values.
-│   ├── createOperatorActions.js   # Mapping calculator operator actions to corresponding handlers.
-│   ├── setInitTheme.js     # Sets the initial theme of the application.
-│   └── toggleTheme.js      # Toggles between different themes.
-├── handlers/                    # Event and action handlers (handling math operations and input events),
-├── styles/                  # SCSS files for styling the application.
-├── utils/         # Utility functions organized into categories.
-│   ├── math/   # Mathematical utility functions.
-│   ├── string/     # String manipulation functions.
-│   └── ui/      # Utility functions for UI interactions.
-└── index.js          # The main JavaScript file that runs the app.
+├── constants/                         # Reusable constants for the application.
+│   ├── calculator.js                  # Calculator related constants.
+│   ├── regex.js                       # Regular expressions used across the project.
+├── features/                          # JavaScript files for specific features and functionalities.
+│   ├── calculateValue.js              # Logic for calculating values.
+│   ├── changeValue.js                 # Handles changes in values.
+│   ├── createOperatorActions.js       # Mapping calculator operator actions to corresponding handlers.
+│   ├── setInitTheme.js                # Sets the initial theme of the application.
+│   └── toggleTheme.js                 # Toggles between different themes.
+├── handlers/                          # Event and action handlers (handling math operations and input events),
+├── styles/                            # SCSS files for styling the application.
+├── utils/                             # Utility functions organized into categories.
+│   ├── math/                          # Mathematical utility functions.
+│   ├── string/                        # String manipulation functions.
+│   └── ui/                            # Utility functions for UI interactions.
+└── index.js                           # The main JavaScript file that runs the app.
 ```
