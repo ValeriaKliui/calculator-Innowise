@@ -6,7 +6,7 @@ import { onClickCalculateValue } from './features/onClickCalculateValue';
 import { onChangeValue } from './features/onChangeValue';
 import { setInitTheme } from './features/setInitTheme';
 import { toggleTheme } from './features/toggleTheme';
-import { onKeyEvent } from './features/onKeyEvent';
+import { onKeyboardInput } from './features/onKeyboardInput';
 
 const calculatorActions = document.getElementById('calculator_buttons');
 calculatorActions.addEventListener('click', onClickCalculateValue);
@@ -19,4 +19,4 @@ document.addEventListener('DOMContentLoaded', setInitTheme);
 const themeToggler = document.getElementById('theme-toggler');
 themeToggler.addEventListener('change', toggleTheme);
 
-document.addEventListener('keydown', onKeyEvent);
+document.addEventListener('keydown', onKeyboardInput);

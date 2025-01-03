@@ -4,7 +4,7 @@ import { handleEquality } from '../handlers/handleEquality';
 
 const valueInput = document.getElementById('value');
 
-export const onKeyEvent = (event) => {
+export const onKeyboardInput = (event) => {
 	const value = event.key;
 	const replacedWithValidSymbols =
 		replaceDivisionAndMultiplicationSymbols(value);

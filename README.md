@@ -79,11 +79,12 @@ public/
 src/
 ├── constants/                         # Reusable constants for the application.
 │   ├── calculator.js                  # Calculator related constants.
-│   ├── regex.js                       # Regular expressions used across the project.
+│   └── regex.js                       # Regular expressions used across the project.
 ├── features/                          # JavaScript files for specific features
-│   ├── calculateValue.js              # Logic for calculating values.
-│   ├── changeValue.js                 # Handles changes in values.
 │   ├── createOperatorActions.js       # Mapping calculator operators to corresponding handlers.
+│   ├── onChangeValue.js               # Handles changes in calculator input values.
+│   ├── onClickCalculateValue.js       # Logic to perform calculations upon clicking calculator buttons.
+│   ├── onKeyboardInput.js             # Handles keyboard input.
 │   ├── setInitTheme.js                # Sets the initial theme of the application.
 │   └── toggleTheme.js                 # Toggles between different themes.
 ├── handlers/                          # Action handlers (handling math operations).
